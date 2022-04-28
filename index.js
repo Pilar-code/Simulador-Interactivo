@@ -11,3 +11,14 @@ for (let i=0; i<100; i++){
     }
     break;
 }
+
+
+const ListaDeProdcutos = []
+let Cantidad = 4
+
+do{
+    let incluirProductos = prompt("Ingrese lo productos que quiere inbcluir en su lista");
+    ListaDeProdcutos.push(incluirProductos);
+}while(ListaDeProdcutos.length != Cantidad)
+
+alert("Estos son los productos ingresados en la lista" + "\n" + "\n" + ListaDeProdcutos.join("\n"));
