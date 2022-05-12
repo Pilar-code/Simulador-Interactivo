@@ -111,8 +111,8 @@ nav{
     background-color: rgb(194, 107, 73);
     color: whitesmoke;
 }
-.BtnProductos{
-    background-color: grey;
+#BtnProductos{
+    background-color: rgb(179, 174, 174);
     color: whitesmoke;
     display: flex;
     flex-direction: row;
@@ -120,4 +120,16 @@ nav{
     align-content: center;
     justify-items: center;
     align-items: center;
+}
+
+/*Bienvenido....*NOMBRE**/
+.Nombres{
+    position: absolute;
+    bottom: 50%;
+    top: 40%;
+    left: 75%;
+    font-weight: 650;
+    font-size: 50px;
+    font-style:italic;
+    z-index: 0;
 }
