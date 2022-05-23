@@ -2,6 +2,9 @@
     margin: 0%;
     padding: 0%;
 }
+ul li{
+    list-style-type: none;
+}
 header{
     position: relative;
 }
@@ -27,16 +30,23 @@ nav{
 .nav{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
     background-color: rgb(206, 203, 203);
     height: 70px;
+    align-items: center;
+    align-content: center;
 }
 .buscador{
-    margin: 5%;
+    margin: 5px;
+    position: relative;
+    left: 950px;
 }
 .logo{
     margin: 1.5%;
 
+}
+#btnCarrito{
+    position: relative;
+    left: 955px;
 }
 /* .Changuito{
     grid-area: hed3;
@@ -53,7 +63,7 @@ nav{
     grid-area: hed5;
 }
 
-/*Hubicacionde los productos en el INDEX*/
+/*Hubicacion de los productos en el INDEX*/
 .imgProductos{
     height: 200px;
     width: 180px;
