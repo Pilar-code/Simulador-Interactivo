@@ -1,0 +1,23 @@
+.imgProductos{
+    height: 200px;
+    width: 180px;
+}
+.boxProductos{
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: stretch;
+    height: 700px;
+}
+.RecuadroImagenes{
+    position: relative;
+    border-color: black;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    max-height: 300px;
+    max-width: 200px;
+}

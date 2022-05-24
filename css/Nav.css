@@ -1,0 +1,38 @@
+nav{
+    position:sticky;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    z-index: 10000000;
+}
+
+.nav{
+    display: flex;
+    flex-flow: row wrap;
+    background-color: rgb(206, 203, 203);
+    height: 70px;
+    align-items: center;
+    align-content: center;
+}
+.buscador{
+    margin: 5px;
+    position: relative;
+    left: 950px;
+}
+.logo{
+    margin: 1.5%;
+
+}
+.btnCarrito{
+    position: relative;
+    left: 955px;
+}
+
+.imgPrincipal{
+    padding-bottom: 70px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 1350px;
+    grid-area: hed5;
+}

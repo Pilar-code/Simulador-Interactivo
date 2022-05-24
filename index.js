@@ -54,11 +54,11 @@
                 <img class="imgProductos" src="./image/${carrito.productos[i].imagen}" alt="Placeholder">
                 <p>${carrito.productos[i].nombre}</p>
                 <h3>$${carrito.productos[i].precio}</h3>
-               <a href="#" class="card-footer-item" id="btnCarrito" data-Producto="${[i].id}">Agregar al Carrito</a>
+                <a href="#" id="btnCarrito" data-Producto="${carrito.productos[i].id}">Agregar al Carrito</a>
             </div>
             `;
         }
-        $(".Padre1").innerHTML = productoHtml;
+        $(".boxProductos").innerHTML = productoHtml;
         }
     }
     var carrito = new Carrito();
@@ -71,7 +71,7 @@
         console.log(carrito.getCarrito);
     });
 
-    $("#Padre1").addEventListener('click', function(ev){
+    $("#boxProductos").addEventListener('click', function(ev){
         ev.preventDefault();
         if(ev.target.id === "btnCarrito"){
             var id = ev.target.dataset.Producto;
@@ -79,91 +79,3 @@
         }
     })
 })();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-añadircarrito.addEventListener('click', (e)=>{
-    e.
-})
-
-
- const btnCarrito = document.querySelectorAll(".btnPorcentaje");
-btnCarrito.forEach(btn =>{
-    btn.addEventListener('Click',addToCarrito)
-})
-
-function addToCarrito(e){
-    const button = e.target
-    console.log(button);
-} */
-
-
-//Boton. Sacar porcentaje de descuento
-/*const btn = document.querySelectorAll(".btnPorcentaje");
-
-const Porcentaje = ()=>{
-    alert("Te ayudaremos a calcular el precio de tu producto con el descuento");
-    let Precio = prompt("Ingresa el precio de tu producto");
-    let Porcentaje = prompt("Ingrese el descuento del producto");
-    
-    const Calculo = Precio * Porcentaje / 100;
-    alert("El descuento del producto sera de " + " " + "$" + Calculo);
-    if (Calculo < 0){
-        alert("El numero introducido no es correcto. Intente nuevamente");
-    }
-    const PrecioFinal = Precio - Calculo;
-    alert("El Precio final del producto sera de" +" "+"$"+PrecioFinal);
-}
-
-btn.addEventListener('click', Porcentaje())
-
-Porcentaje(); */
