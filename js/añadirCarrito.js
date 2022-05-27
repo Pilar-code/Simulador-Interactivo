@@ -19,18 +19,18 @@
     this.getCarrito = JSON.parse(localStorage.getItem("carrito"));
     
     this.agregarId = function(item){
-        for(i of this.productos){
+        for(id of this.productos){
             if([i].id === item){
                 var registro = i;
             }
         }
         if(!registro){
-            return;
+            return
         }
-        //console.log(registro);
+        console.log(registro);
 
-        for(i of this.getCarrito){
-            if(i.id === item){
+        for(id of this.getCarrito){
+            if([i].id === item){
                i.cantidad++;
                console.log(this.getCarrito); 
                localStorage.setItem("carrito",JSON.stringify(this.getCarrito));
@@ -39,14 +39,21 @@
         }
         registro.cantidad = 1;
         this.getCarrito.push(registro);
-        console.log(this.getCarrito);
-        localStorage.setItem("carrito",JSON.stringify(this.getCarrito));   
+        console.log(this.constructor);
+        localStorage.setItem("carrito",JSON.stringify(this.getCarrito));
       }
+     }
+     this.getTotal = function(){
+        var total = 0;
+        for(i of this.getCarrito){
+            total += parseFloat(i.cantidad) * parseFloat(i.precio);
+        }
+        return total;
      }
     }
 
     function carritoVista() {
-        this.renderCatalogo = function(){
+        this.mostrarCatalogo= function(){
             var productoHtml = ``;
         for (var i in carrito.productos){
             productoHtml += `
@@ -60,15 +67,46 @@
         }
         $(".boxProductos").innerHTML = productoHtml;
         }
+        this.mostrarCarrito = function (){
+           var carritoHtml = ``;
+            for (i of carritoVista.getcarrito){
+                carritoHtml += `
+                <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Producto</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Total</th>
+                  <th scope="col">quitar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td><img src="./img/${getCarrito.i.imagen}" alt="">${getcarrito.i.nombre}</td>
+                  <td>${getcarrito.i.precio}</td>
+                  <td>${getCarrito.i.cantidad}</td>
+                  <td>${getTotal.i.total}</td>
+                </tr>
+              </tbody>
+                `;
+            }
+            }
+            $("#pestañaCarrito").addEventListener('click',function(){
+                alertify.alert().set('message', 'Tu Carrito'+ ' ' + carritoVista.mostrarCarrito.carritoHtml).show();
+            });
+          //$("#pestañaCarrito").innerHTML = carritoHtml;   
     }
     var carrito = new Carrito();
     var carritoVista = new carritoVista();
 
     document.addEventListener('DOMContentLoaded',function(){
-        /* console.log(carrito); */
+        carritoVista.mostrarCatalogo();
+        //carritoVista.mostrarCarrito(); 
         carrito.constructor();
-        carritoVista.renderCatalogo();
-        console.log(carrito.getCarrito);
+        console.log(carrito.getcarrito);
+        console.log(carrito.getTotal());
     });
 
     $("#boxProductos").addEventListener('click', function(ev){
@@ -78,4 +116,5 @@
             carrito.agregarId(id);
         }
     })
+
 })();

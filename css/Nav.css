@@ -7,6 +7,8 @@ nav{
 }
 
 .nav{
+    position: relative;
+    min-width: 100%;
     display: flex;
     flex-flow: row wrap;
     background-color: rgb(206, 203, 203);
@@ -15,17 +17,18 @@ nav{
     align-content: center;
 }
 .buscador{
-    margin: 5px;
-    position: relative;
-    left: 950px;
+    position: absolute;
+    right: 15%;
+    top: 20%;
 }
 .logo{
     margin: 1.5%;
 
 }
-.btnCarrito{
-    position: relative;
-    left: 955px;
+#iconoCarrito{
+    position: absolute;
+    right: 5%;
+    top: 25%;
 }
 
 .imgPrincipal{
@@ -33,6 +36,10 @@ nav{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    max-width: 1350px;
+    max-width: 100%;
     grid-area: hed5;
+}
+.nombres{
+    font-size: 20%;
+    font-weight: 20%;
 }
